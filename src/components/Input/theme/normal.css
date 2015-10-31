@@ -1,0 +1,57 @@
+.Input-theme-normal,
+.Input-theme-normal .Input--control
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+.Input-disabled.Input-theme-normal .Input--control
+{
+    color: #aaa;
+}
+
+.Input-theme-normal .Input--control::-webkit-input-placeholder
+{
+    color: #999;
+}
+
+.Input-theme-normal .Input--control::-moz-placeholder
+{
+    opacity: 1; /*В firefox полупрозрачный по умолчанию*/
+    color: #999;
+}
+
+.Input-theme-normal .Input--control:-ms-input-placeholder
+{
+    color: #999;
+}
+
+.Input-theme-normal:before
+{
+    border: 1px solid rgba(0,0,0,.2);
+    background-color: #fff;
+    background-clip: padding-box;
+}
+
+.Input-theme-normal.Input-hovered:before
+{
+    border-color: rgba(0,0,0,.3);
+}
+
+.Input-theme-normal.Input-focused:before
+{
+    border: 2px solid #ffdb4d;
+}
+
+.Input-theme-normal.Input-disabled:before
+{
+    border-color: transparent;
+    background-color: rgba(0,0,0,.08);
+}
+
+.Input-theme-normal:before
+{
+    transition: .1s ease-out;
+    transition-property: border-color, border-width;
+}

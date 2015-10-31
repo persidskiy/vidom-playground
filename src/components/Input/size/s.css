@@ -1,0 +1,65 @@
+.Input-size-s
+{
+    font-size: 13px;
+    line-height: 28px;
+}
+
+/* Делаем отступы с помощью border, т.к. в IE10+ при длинном тексте в инпуте padding игнорируется
+   https://st.yandex-team.ru/ISLCOMPONENTS-865
+*/
+.Input-size-s .Input--control,
+.Input-size-s .Input--hint
+{
+    height: 28px;
+
+    border-right-width: 8px;
+    border-left-width: 8px;
+}
+
+.Input-size-s .Input--icon
+{
+    width: 28px;
+}
+
+.Input-size-s .Input--clear
+{
+    width: 28px;
+    height: 28px;
+}
+
+.Input-size-s .Input--icon-side-right ~ .Input--clear
+{
+    right: 14px;
+}
+
+.Input-size-s .Input--clear-visible ~ .Input--control
+{
+    border-right-width: 22px;
+}
+
+.Input-size-s .Input--icon-side-right ~ .Input--clear-visibility-visible ~ .Input--control
+{
+    border-right-width: 36px;
+}
+
+.Input-size-s .Input--icon-side-right ~ .Input--control,
+.Input-size-s .Input--hint.Input--hint-rpad-yes
+{
+    border-right-width: 28px;
+}
+
+.Input-size-s .Input--icon-side-left ~ .Input--control,
+.Input-size-s .Input--hint.Input--hint-lpad-yes
+{
+    border-left-width: 28px;
+}
+
+.Input-size-s.Input-type-textarea .Input--control
+{
+    padding: 4px 6px 0;
+}
+
+.Input-size-s.Input-type-textarea .Input--clear ~ .Input--control
+{
+    padding-right: 22px;
+}

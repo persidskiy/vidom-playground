@@ -1,0 +1,15 @@
+.XTable
+{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.XTable td
+{
+    padding: 10px;
+}
+
+.XTable tr > th {
+    padding-left: 10px;
+    padding-right: 10px;
+}

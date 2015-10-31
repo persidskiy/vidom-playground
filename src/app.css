@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+h1, h2, h3, h4, h5, h5, p
+{
+    margin-bottom: 1em;
+}
+
+
+.app
+{
+    padding: 20px;
+}
+
+.app > .Button {
+    margin-right: 1em;
+}

@@ -1,0 +1,6 @@
+.Button.Button-pin-clear_clear:before
+{
+    border-right-width: 0;
+    border-left-width: 0;
+    border-radius: 0;
+}

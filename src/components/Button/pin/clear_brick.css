@@ -1,0 +1,5 @@
+.Button.Button-pin-clear_brick:before
+{
+    border-left-width: 0;
+    border-radius: 0;
+}

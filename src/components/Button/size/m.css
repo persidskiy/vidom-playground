@@ -1,0 +1,34 @@
+
+.Button-size-m
+{
+    height: 32px;
+
+    font-size: 15px;
+    line-height: 32px;
+}
+
+.Button-size-m .Button--text
+{
+    margin: 0 15px;
+}
+
+.Button-size-m .Button--icon
+{
+    width: 32px;
+}
+
+.Button-size-m .Button--icon.icon-type-arrow
+{
+    width: 35px;
+}
+
+.Button-size-m .Button--icon-side-left ~ .Button--text
+{
+    margin-left: 29px;
+}
+
+.Button-size-m .Button--icon-side-right ~ .Button--text
+{
+    margin-right: 29px;
+}
+

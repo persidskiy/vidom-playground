@@ -1,0 +1,99 @@
+.Input
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 300px;
+}
+
+.Input:before
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: 0;
+
+    content: '';
+    z-index: -1;
+}
+
+
+.Input--control
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-size: 100%;
+
+    color: #000;
+    border: 0 solid transparent;
+    outline: 0;
+    background: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+/* Позиционируется относительно input--box.
+ * Важно, чтобы правая граница элемента с очищающим крестиком
+ * совпадала с правой границей input--box, иначе появляется
+ * возможность кликнуть по правой границе input--box. */
+.Input--clear
+{
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+
+    visibility: hidden;
+
+    margin: 0;
+    padding: 0;
+
+    pointer-events: none;
+
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    transition: visibility 0s linear .1s, opacity .1s ease-out;
+}
+
+.Input--clear-visible
+{
+    visibility: visible;
+
+    cursor: pointer;
+    pointer-events: auto;
+
+    opacity: .3;
+
+    transition: opacity .1s ease-out;
+}
+
+.Input--clear-visible.Input--clear-hovered
+{
+    opacity: .8;
+}
+
+.Input-disabled .Input--clear
+{
+    display: none;
+}
+
+.Input-size-xs .Input--clear,
+.Input-size-s .Input--clear
+{
+    background-image: url(assets/clear-s.svg);
+}
+
+.Input-size-m .Input--clear
+{
+    background-image: url(assets/clear-m.svg);
+}
