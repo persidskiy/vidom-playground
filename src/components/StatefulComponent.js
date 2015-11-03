@@ -13,7 +13,7 @@ class StatefulComponent extends Component {
 
     setState(state, silent) {
         this._prevState = this._state;
-        this._state = Object.assign({}, this._state, state);
+        this._state = {...this._state, ...state};
         silent || this.update(() => this._prevState = this._state);
 
         var attrs = this.getAttrs();
