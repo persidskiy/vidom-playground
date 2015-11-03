@@ -13,6 +13,9 @@ import '../../components/Button/size/s.css'
 import '../../components/Button/size/xs.css'
 import '../../components/Button/size/m.css'
 import '../../components/Button/theme/normal.css'
+import '../../components/Button/theme/pseudo.css'
+import '../../components/Button/theme/action.css'
+import '../../components/Button/theme/clear.css'
 import '../../components/Button/pin/round_brick.css'
 import '../../components/Button/pin/round_clear.css'
 import '../../components/Button/pin/clear_round.css'
@@ -34,17 +37,17 @@ class ButtonExample extends StatefulComponent {
     }
 
     onRender() {
-        var sizes = ['xs', 's', 'm'];
-        var sizesHead = node('tr').children(sizes.map(s => node('th').children(s)));
-        var sizesContent = node('tr').children(sizes.map(s => node('td').children(node(Button)
+        var themes = ['normal', 'pseudo', 'action', 'clear'];
+        var themesHead = node('tr').children(themes.map(t => node('th').children(t)));
+        var themesContent = node('tr').children(themes.map(t => node('td').children(node(Button)
             .attrs({
-                size: s,
+                size: 's',
                 className: bemClass('ButtonExample--button'),
-                theme: 'normal',
+                theme: t,
                 disabled: this.getState().buttonsDisabled,
                 text: 'Button'
             }))));
-        var sizesExample = [
+        var themesExample = [
             node('table')
                 .attrs({
                     className: bemClass('XArea', {
@@ -53,8 +56,8 @@ class ButtonExample extends StatefulComponent {
                     }, 'XTable')
                 })
                 .children([
-                    sizesHead,
-                    sizesContent
+                    themesHead,
+                    themesContent
                 ]),
             node('div')
                 .attrs({className: 'XArea'})
@@ -78,6 +81,23 @@ class ButtonExample extends StatefulComponent {
                 ])
         ];
 
+        var sizes = ['xs', 's', 'm'];
+        var sizesExample = [
+            node('br'),
+            node('table')
+                .attrs({
+                    className: bemClass('XArea', {bordered: true}, 'XTable')
+                })
+                .children([
+                    node('tr').children(sizes.map(s => node('th').children(s))),
+                    node('tr').children(sizes.map(s => node('td').children(node(Button).attrs({
+                        theme: 'normal',
+                        size: s,
+                        text: 'Button'
+                    }))))
+                ])
+        ];
+
         var pins = [undefined, 'round_clear', 'clear_round', 'round_brick', 'brick_round', 'brick_clear',
             'clear_brick', 'brick_brick', 'clear_clear'];
         var pinExample = [
@@ -87,10 +107,10 @@ class ButtonExample extends StatefulComponent {
                     className: bemClass('XArea', {bordered: true}, 'XTable')
                 })
                 .children([
-                    node('tr')
-                        .children(pins.map(pin => node('th').children(pin))),
-                    node('tr')
-                        .children(pins.map(pin => node('td').children(node(Button).attrs({theme: 'normal', size: 's', pin: pin, text: 'Button'}))))
+                    node('tr').children(pins.map(pin => node('th').children(pin))),
+                    node('tr').children(pins.map(pin => node('td').children(node(Button).attrs({
+                        theme: 'normal', size: 's', pin: pin, text: 'Button'
+                    }))))
                 ])
         ];
 
@@ -120,7 +140,12 @@ class ButtonExample extends StatefulComponent {
 
         return node('div')
             .attrs({className: bemClass('ButtonExample')})
-            .children(sizesExample.concat(pinExample).concat(modesExample))
+            .children(
+                [node('h2').children('Button')]
+                .concat(themesExample)
+                .concat(sizesExample)
+                .concat(pinExample)
+                .concat(modesExample));
     }
 }
 
